@@ -4,23 +4,61 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS & Font Awesome Stylesheet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="main.css">
-  <title>Document</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
+
+  <title>Task-List</title>
 </head>
 <body>
-  <div class="container">
-    <div class="nav">
-      <h2><i class="fa-solid fa-clipboard-check"></i>
-        To-do List</h2>
-        <div class="user-input">
-          <input id="input" type="text"><button onclick="addItem()">Submit</button>
-        </div>
+  <div class="wrapper">
+    <div class="box">
+      <h2><i class="fa-solid fa-list-check"></i> To-Do List</h2>
+    </div>
+
+  <!-- Main Task Container -->
+    <div class="container" id="main">
+      <div class="add-task">
+        <h2>Add Task</h2>
+        <hr>
+      </div>
+
+  <!-- Enter New Task Text -->
+      <input type="text" id="task-text" name="task-text">
+
+      <div id="create-task">
+        Create Task
+      </div>
+
+  <!-- Listed Incomplete Tasks -->
+      <div class="added-tasks">
+        <h2>Current Tasks</h2>
+        <hr>
+        <ul id="incomplete-task">
+          <li><input type="checkbox">
+            <label class="task">Check E-mails</label><input type="text"><button class="edit"><i class="fa-solid fa-pen-to-square"></i></button><button class="Delete"><i class="fa-solid fa trash-can"></i></button></li>
+              
+        </ul>
+      </div>
+
+  <!-- Listed Complete Tasks -->  
+      <div class="completed-tasks">
+        <h2>Completed Tasks</h2>
+        <hr>
+        <ul id="complete-task">
+          <li><input type="checkbox" checked><label class="task">Attend Morning Meeting</label><input type="text"><button class="edit"><i class="fa-solid fa-pen-to-square"></i></button><button class="Delete"><i class="fa-solid fa-trash-can"></i></button></li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="container">
-    <div class="to-do-items"></div>
-  </div>
+
+  <!-- JavaScript Source -->
   <script src="main.js"></script>
 </body>
 </html>
