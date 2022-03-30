@@ -1,19 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
-
- //button to add new task
- let addButton = document.querySelector('add')
+  //button to add new task
+ let addButton = document.querySelector('#add')
 
  //input field to add new task
  let addInput = document.querySelector('#item')
-
+ 
  //font awesome icons for buttons
  let removeI = '<i class="fa-solid fa-trash"></i>'
 
  let completeI = '<i class="fa-solid fa-check"></i>'
-
-})
-
-//
 
 //add task clicking add button
 addButton.addEventListener('click', function() {
@@ -50,7 +44,7 @@ addInput.addEventListener('keypress', function(e) {
  }
 })
 
-//
+let todoId = 0;
 
 function addItemTodo(text) {
 
@@ -61,6 +55,8 @@ function addItemTodo(text) {
  let item = document.createElement('li')
 
  item.innerText = text
+ todoId += 1;
+ item.id = "todo" + todoId;
 
  //create container for buttons remove and complete
  let buttons = document.createElement('div')
@@ -96,31 +92,24 @@ function addItemTodo(text) {
 
 }
 
-//
-
-function completeItem() {
-
+function completeItem(event) {
+  const target = event.target
+ 
  //grab 'li'
- let item = this.parentNode.parentNode
-
+ let item = target.parentNode.parentNode
+ 
  //grab 'ul'
  let parent = item.parentNode
-
+ 
  //grab parent id
  let id = parent.id
 
- //check if needed to be completed or re-added
- let target =
-
-  id === 'todo'
-   ? document.getElementById('completed')
-   : document.getElementById('todo')
-
  //remove item from current 'ul'
- parent.removeChild(item)
+ parent.parentNode.removeChild(parent)
+ const completed = document.getElementById("completed")
 
  //add item to new 'ul'
- target.insertBefore(item, target.childNodes[0])
+ completed.insertBefore(parent, completed.firstChild)
 
 }
 
