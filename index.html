@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS & Font Awesome Stylesheet -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Google Fonts -->
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <!-- CSS Link -->
   <link rel="stylesheet" href="main.css">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
+  <title>Task To-Do List</title>
 
-  <title>Task-List</title>
 </head>
+
 <body>
-  <div class="wrapper">
-    <div class="box">
-      <h2><i class="fa-solid fa-list-check"></i> To-Do List</h2>
-    </div>
 
-  <!-- Main Task Container -->
-    <div class="container" id="main">
-      <div class="add-task">
-        <h2>Add Task</h2>
-        <hr>
-      </div>
+  <div id="container">
 
-  <!-- Enter New Task Text -->
-      <input type="text" id="task-text" name="task-text">
+    <h1>Task To-Do List</h1>
 
-      <div id="create-task">
-        Create Task
-      </div>
+    <hr>
 
-  <!-- Listed Incomplete Tasks -->
-      <div class="added-tasks">
-        <h2>Current Tasks</h2>
-        <hr>
-        <ul id="incomplete-task">
-          <li><input type="checkbox">
-            <label class="task">Check E-mails</label><input type="text"><button class="edit"><i class="fa-solid fa-pen-to-square"></i></button><button class="Delete"><i class="fa-solid fa trash-can"></i></button></li>
-              
-        </ul>
-      </div>
+    <header>
+      <input type="text" placeholder="Enter a task.." id="item">
+      <button id="add">
+        <i class="fa-solid fa-plus-large"></i>
+      </button>
+    </header>
 
-  <!-- Listed Complete Tasks -->  
-      <div class="completed-tasks">
-        <h2>Completed Tasks</h2>
-        <hr>
-        <ul id="complete-task">
-          <li><input type="checkbox" checked><label class="task">Attend Morning Meeting</label><input type="text"><button class="edit"><i class="fa-solid fa-pen-to-square"></i></button><button class="Delete"><i class="fa-solid fa-trash-can"></i></button></li>
-        </ul>
-      </div>
-    </div>
+    <hr>
+
+    <h2>Incomplete Tasks:</h2>
+    <ul class="todo" id="todo">
+      <li>
+        <span class="buttons">
+          <button class="remove"></button>
+          <button class="complete"></button>
+        </span>
+      </li>
+    </ul>
+
+    <hr>
+
+    <h2>Completed Tasks:</h2>
+    <ul class="completed" id="completed"></ul>
+
   </div>
 
-  <!-- JavaScript Source -->
+  <!-- JavaScript Link -->
   <script src="main.js"></script>
+  
 </body>
+
 </html>
