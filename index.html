@@ -8,6 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -15,7 +18,7 @@
   <!-- CSS Link -->
   <link rel="stylesheet" href="main.css">
 
-  <title>Task To-Do List</title>
+  <title>To-Do List</title>
 
 </head>
 
@@ -23,20 +26,18 @@
 
   <div id="container">
 
-    <h1>Task To-Do List</h1>
-
-    <hr>
+    <div class="box">
+      <h2><i class="fa-solid fa-list-check"></i>To-Do List</h2>
+    </div>
 
     <header>
       <input type="text" placeholder="Enter a task.." id="item">
-      <button id="add">
-        <i class="fa-solid fa-plus-large"></i>
-      </button>
+      <button id="add"><i class="fa-solid fa-plus"></i></button>
     </header>
 
     <hr>
 
-    <h2>Incomplete Tasks:</h2>
+    <h3><i class="fa-brands fa-font-awesome"></i>Tasks Due:</h3>
     <ul class="todo" id="todo">
       <li>
         <span class="buttons">
@@ -48,8 +49,10 @@
 
     <hr>
 
-    <h2>Completed Tasks:</h2>
+    <h3><i class="fa-solid fa-circle-check"></i>Complete:</h3>
     <ul class="completed" id="completed"></ul>
+
+    <hr>
 
   </div>
 
