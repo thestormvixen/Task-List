@@ -1,3 +1,24 @@
+ var listId = "todoList"
+
+ var localAdapter = {
+   saveList: function (object) {
+     
+    var stringified = JSON.stringify(object);
+    localStorage.setItem(listId, stringified);
+    return true;
+   },
+
+   getList: function()  {
+     return JSON.parse(localStorage.getItem(listId));
+   },
+
+   clearList: function() {
+    localStorage.removeItem(listId);
+   }
+ };
+
+ var storage = localAdapter;
+
   //button to add new task
  let addButton = document.querySelector('#add')
 

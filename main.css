@@ -78,6 +78,10 @@ header button {
  color: white;
 }
 
+header button:hover {
+ background-color: #6975A0;
+}
+
 hr {
  margin: 8px;
  color: #d1d3d4;
@@ -89,6 +93,14 @@ h3 {
 
 h3 i {
  margin: 2%;
+}
+
+#flag-icon {
+ color: red;
+}
+
+#circle-check-icon {
+ color: green;
 }
 
 #add i {
