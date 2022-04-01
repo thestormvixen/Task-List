@@ -19,25 +19,28 @@ var localAdapter = {
 
 var storage = localAdapter;
 
-function saveLocalTodos(todos){
-  
-  if(localStorage.getItem(todos) === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem(todos));
-  }
-  todos.push(todos);
-  localStorage.setItem(todos, JSON.stringify(todos));
-}
+function saveLocalTodos(todos) {
 
+  let todosList;
+
+  if(localStorage.getItem('todos') === null) {
+    todosList = [];
+
+  } else{
+    todosList = JSON.parse(localStorage.getItem('todos'));
+  }
+
+  todosList.push(todos);
+  localStorage.setItem(todos, JSON.stringify(todosList));
+}
 function getTodos(){
   let todos;
-  if(localStorage.getItem(todos) === null) {
+  if(localStorage.getItem('todos') === null){
     todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem(todos));
+  }else{
+    todos = JSON.parse(localStorage.getItem('todos'));
   }
-  todos.forEach(function(todos) {
+  todos.forEach(function(todo){
   });
 }
 
