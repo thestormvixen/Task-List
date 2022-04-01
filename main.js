@@ -20,7 +20,7 @@ var localAdapter = {
 var storage = localAdapter;
 
 function saveLocalTodos(todos){
-  let todos;
+  
   if(localStorage.getItem(todos) === null) {
     todos = [];
   } else {
