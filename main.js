@@ -1,21 +1,45 @@
- var listId = "todoList"
+var listId = "todoList"
 
- var localAdapter = {
-   saveList: function (object) {
-     
-    var stringified = JSON.stringify(object);
-    localStorage.setItem(listId, stringified);
-    return true;
-   },
+var localAdapter = {
+  saveList: function (object) {
 
-   getList: function()  {
-     return JSON.parse(localStorage.getItem(listId));
-   },
+   var stringified = JSON.stringify(object);
+   localStorage.setItem(listId, stringified);
+   return true;
+  },
 
-   clearList: function() {
-    localStorage.removeItem(listId);
-   }
- };
+  getList: function()  {
+    return JSON.parse(localStorage.getItem(listId));
+  },
+
+  clearList: function() {
+   localStorage.removeItem(listId);
+  }
+};
+
+var storage = localAdapter;
+
+function saveLocalTodos(todos){
+  let todos;
+  if(localStorage.getItem(todos) === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem(todos));
+  }
+  todos.push(todos);
+  localStorage.setItem(todos, JSON.stringify(todos));
+}
+
+function getTodos(){
+  let todos;
+  if(localStorage.getItem(todos) === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem(todos));
+  }
+  todos.forEach(function(todos) {
+  });
+}
 
  var storage = localAdapter;
 
@@ -38,6 +62,9 @@ addButton.addEventListener('click', function() {
  if(document.getElementById('item').value.length == 0) {
   alert("Please enter a task")
  }
+
+ //add to local storage
+ saveLocalTodos(addInput.value);
 
  if (newItem) {
 
